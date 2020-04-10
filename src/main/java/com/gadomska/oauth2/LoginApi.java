@@ -22,7 +22,7 @@ public class LoginApi {
                 .claim("roles", "user")
                 .setIssuedAt(new Date(currentTimeMillis))
                 .setExpiration(new Date(currentTimeMillis + 20000))
-                .signWith(SignatureAlgorithm.HS256, user.getPassword())
+                .signWith(SignatureAlgorithm.HS512, user.getPassword())
                 .compact();
     }
 }
